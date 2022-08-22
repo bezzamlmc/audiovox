@@ -4,7 +4,8 @@
 
 // Misc variables - page elements etc.
 	const audioPlayer = document.getElementById("audioplayer");
-	const audioFileLink = document.getElementById("audiofile");
+	const audioFileUrl = document.getElementById("audiourl");
+	const audioFileBrowse = document.getElementById("audiofile");
 	const dropZone = document.getElementById("drop_zone");
 
 // Button handlers
@@ -19,16 +20,30 @@
 		dropHandler(e);
 	});
 
+// Handler for link loader
+	audioFileBrowse.addEventListener("input", function(e){
+		loadFile();
+	})
+
 	fileRequestButton.addEventListener("click", function(e){
-		read1();
+		loadUrl();
 	});
 
 	//Load audio file
-	function read1(){
-		var audioname = audioFileLink.value;
-		audioPlayer.setAttribute("src",audioname);
+	function loadFile(){
+		var audioname = audioFileBrowse.value;
+		var file = audioFileBrowse.files[0];
+		audioPlayer.setAttribute("src",URL.createObjectURL(file));
 
 		console.log(`You are attempting to load ${audioname}`);
+		showFileName(audioname);
+	}
+
+	//Load url
+	function loadUrl(){
+		var audioname = audioFileUrl.value;
+		audioPlayer.setAttribute("src",audioname);
+		showFileName(audioname);
 	}
 
 	function dragoverHandler(e){
@@ -44,15 +59,22 @@
 		console.log(`You are dropping ${lf} files`);
 		if (lf > 0) {
 			var file = data.files[0];
-			var audioname = file.name.substring(0,file.name.length-4);
-			console.log(`${audioname}`)
+			var audioname = file.name;
+			console.log(`${audioname}`);
 			audioPlayer.setAttribute("src",URL.createObjectURL(file));
+			showFileName(audioname);
 		}
+	}
+
+	function showFileName(filnam){
+		var audioFile = document.getElementById("dropfile");
+		var text =`<b><i>Now loaded ${filnam}.</i></b>`;
+		audioFile.innerHTML = text;
+		console.log(`Loaded ${filnam}`)
 	}
 
 	function playAudio() {
 //Audio player
-
 		console.log("Load audio to be played by the user");
 
 	}

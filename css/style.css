@@ -6,11 +6,12 @@ header {
 	margin-bottom: 20px;
  }
 
+
  .button {
-  background-color: #4CAF50;
+  background-color: #4caf7d;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 28;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -21,14 +22,29 @@ header {
 
 #drop_zone {
 	border: 5px solid blue;
-	width:  200px;
+	width:  600px;
 	height: 100px;
+}
+
+main form #audio_browse {
+	width: 40%;
+}
+
+main form #audio_link {
+	width: 40%;
 }
 
  .container1{
 	 border: 2x solid black;
 	 border-radius: 2px;
-	 display: flexi-column;
+	 display: flex;
+	 justify-content: space-around;
+ }
+
+ .container2{
+	 border: 2x solid black;
+	 border-radius: 2px;
+	 display: flex-column;
 	 justify-content: space-around;
  }
 

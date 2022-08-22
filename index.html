@@ -15,25 +15,35 @@
 	</header>
 
 	<main>
-		<h3>Specify a link or path to an audio file to be streamed into the player</h3>
-		<form id="audio_file">
-			<label><b>Audio file link:  </b></label>
-			<input type="url" id="audiofile" name="audiofile"><br><br>
-			<input type="button" id ="filereq" class="button" value="Load audio file">
-		</form>
-
-		<br>
-		<br>
-
 		<div class="container1">
+			<form id="audio_link">
+				<h3>Specify a link or path to an audio file to be streamed into the player</h3>
+				<label><b>Audio file link:  </b></label>
+				<input type="url" id="audiourl" name="audiourl"><br><br>
+				<input type="button" id ="filereq" class="button" value="Load audio file"><br><br>
+
+			</form>
+
+			<form id="audio_browse">
+				<h3>Or browse and load a file from your local network</h3>
+				<input type="file" id="audiofile" name="audiofile"><br><br>
+			</form>
+
+
+		</div>
+		<br>
+		<br>
+
+		<div class="container2">
 
 			<div>
 				<label class="lb" for="player"><b>Audio player</b></label>
 				<audio controls id="audioplayer">
 					Your browser doesn't support audio
 				</audio>
-				<p>You can load an audio file using the click button or drop it in the box below</p>
+				<p>You can load an audio file using the link and browse options or drop it in the box below</p>
 				<div id="drop_zone">
+					<p id="dropfile"></p>
 				</div>
 			</div>
 
