@@ -19,6 +19,12 @@ header {
   cursor: pointer;
 }
 
+#drop_zone {
+	border: 5px solid blue;
+	width:  200px;
+	height: 100px;
+}
+
  .container1{
 	 border: 2x solid black;
 	 border-radius: 2px;

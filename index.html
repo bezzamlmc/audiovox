@@ -15,7 +15,7 @@
 	</header>
 
 	<main>
-		<h3>Specify a link to an audio file to be streamed into the player</h3>
+		<h3>Specify a link or path to an audio file to be streamed into the player</h3>
 		<form id="audio_file">
 			<label><b>Audio file link:  </b></label>
 			<input type="url" id="audiofile" name="audiofile"><br><br>
@@ -30,8 +30,11 @@
 			<div>
 				<label class="lb" for="player"><b>Audio player</b></label>
 				<audio controls id="audioplayer">
-				      Your browser does not support the audio element.
+					Your browser doesn't support audio
 				</audio>
+				<p>You can load an audio file using the click button or drop it in the box below</p>
+				<div id="drop_zone">
+				</div>
 			</div>
 
 		</div>
@@ -40,7 +43,7 @@
 		<br>
 
 	</main>
-	
+
 </body>
 
 </html>
