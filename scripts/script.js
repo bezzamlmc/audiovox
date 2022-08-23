@@ -32,12 +32,17 @@
 
 	//Load audio file
 	function loadFile(){
-		var audioname = audioFileBrowse.value;
 		var file = audioFileBrowse.files[0];
-		audioPlayer.setAttribute("src",URL.createObjectURL(file));
+		var audioname = file.name;
+		var fReader = new FileReader();
 
-		console.log(`You are attempting to load ${audioname}`);
-		showFileName(audioname);
+		fReader.readAsDataURL(file);
+		fReader.onloadend = function(e) {
+//			audioPlayer.setAttribute("src",URL.createObjectURL(file));
+			audioPlayer.setAttribute("src",e.target.result);
+			console.log(`You are attempting to load ${audioname}`);
+			showFileName(audioname);
+		}
 	}
 
 	//Load url
@@ -72,7 +77,7 @@
 
 	function showFileName(filnam){
 		var audioFile = document.getElementById("dropfile");
-		var text =`<b><i>Now loaded ${filnam}.</i></b>`;
+		var text =`<b><i>Now loaded: ${filnam}.</i></b>`;
 		audioFile.innerHTML = text;
 		console.log(`Loaded ${filnam}`)
 	}
