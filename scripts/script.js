@@ -11,12 +11,13 @@
 // Button handlers
 	const fileRequestButton = document.getElementById("filereq");
 
-//Enable drops
-	dropZone.addEventListener("dragover", function(e) {
+//Default drop behavior needs to be disabled unless it happens on the dropzone!
+
+	document.addEventListener("dragover", function(e) {
 		dragoverHandler(e);
 	});
 
-	dropZone.addEventListener("drop", function(e) {
+	document.addEventListener("drop", function(e) {
 		dropHandler(e);
 	});
 
@@ -52,17 +53,20 @@
 	}
 
 	function dropHandler(e){
-		e.stopPropagation();
 		e.preventDefault();
-		var data = e.dataTransfer;
-		var lf = data.files.length;
-		console.log(`You are dropping ${lf} files`);
-		if (lf > 0) {
-			var file = data.files[0];
-			var audioname = file.name;
-			console.log(`${audioname}`);
-			audioPlayer.setAttribute("src",URL.createObjectURL(file));
-			showFileName(audioname);
+
+		if (e.target.className == "drop_zone"){
+			e.stopPropagation();
+			var data = e.dataTransfer;
+			var lf = data.files.length;
+			console.log(`You are dropping ${lf} files`);
+			if (lf > 0) {
+				var file = data.files[0];
+				var audioname = file.name;
+				console.log(`${audioname}`);
+				audioPlayer.setAttribute("src",URL.createObjectURL(file));
+				showFileName(audioname);
+			}
 		}
 	}
 
