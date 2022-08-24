@@ -23,7 +23,7 @@ header {
 #drop_zone {
 	border: 5px solid blue;
 	width:  600px;
-	height: 100px;
+	height: 80px;
 }
 
 main form #audio_browse {
@@ -44,7 +44,7 @@ main form #audio_link {
  .container2{
 	 border: 2x solid black;
 	 border-radius: 2px;
-	 display: flex-column;
+	 display: flex-row;
 	 justify-content: space-around;
  }
 

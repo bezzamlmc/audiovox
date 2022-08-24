@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Audio Vox Manager</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="scripts/script.js" type="text/javascript" defer></script>
 </head>
 <body>
@@ -39,16 +40,32 @@
 		<div class="container2">
 
 			<div>
-				<label class="lb" for="player"><b>Audio player</b></label>
-				<audio controls id="audioplayer">
-					<source id="oggtype" type="audio/ogg">
-					<source id="mpegtype" type="audio/mpeg">
-					<source id="mpegtype" type="audio/wav">
-					Your browser doesn't support audio
-				</audio>
-				<p>You can load an audio file using the link and browse options or drop it in the box below</p>
-				<div id="drop_zone" class="drop_zone">
-					<p id="dropfile"></p>
+
+				<div>
+					<label class="lb" for="player"><b>Original audio</b></label>
+					<audio controls id="audioplayer">
+						<source id="oggtype" type="audio/ogg">
+						<source id="mpegtype" type="audio/mpeg">
+						<source id="mpegtype" type="audio/wav">
+						Your browser doesn't support audio
+					</audio>
+					<p>You can load an audio file using the link and browse options or drop it in the box below</p>
+						<div id="drop_zone" class="drop_zone">
+						<p id="dropfile"></p>
+					</div>
+				</div>
+
+				<div>
+					<label class="lb2" for="player2"><b>Modified audio</b></label>
+					<audio controls id="audioplayer2">
+						<source id="oggtype" type="audio/ogg">
+						<source id="mpegtype" type="audio/mpeg">
+						<source id="mpegtype" type="audio/wav">
+						Your browser doesn't support audio
+					</audio>
+					<br>
+					<input type="button" id ="applyfilter" class="button" value="Apply filter"><br><br>
+
 				</div>
 			</div>
 
