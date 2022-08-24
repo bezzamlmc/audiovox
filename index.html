@@ -26,7 +26,9 @@
 
 			<form id="audio_browse">
 				<h3>Or browse and load a file from your local network</h3>
-				<input type="file" id="audiofile" name="audiofile"><br><br>
+				<input type="file" id="audiofile" name="audiofile" accept="audio/ogg, audio/mpeg, audio/wav">
+				<br>
+				<br>
 			</form>
 
 
@@ -39,6 +41,9 @@
 			<div>
 				<label class="lb" for="player"><b>Audio player</b></label>
 				<audio controls id="audioplayer">
+					<source id="oggtype" type="audio/ogg">
+					<source id="mpegtype" type="audio/mpeg">
+					<source id="mpegtype" type="audio/wav">
 					Your browser doesn't support audio
 				</audio>
 				<p>You can load an audio file using the link and browse options or drop it in the box below</p>
